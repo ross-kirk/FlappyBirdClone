@@ -1,20 +1,31 @@
+using Game;
+
 namespace Core
 {
     public class PlayState : IState
     {
+        private PipeController _pipeController;
+        //TODO add player ref
+
+        public PlayState(PipeController pipeController)
+        {
+            _pipeController = pipeController;
+            //todo add player DI
+        }
+        
         public void Enter()
         {
-            throw new System.NotImplementedException();
+            _pipeController.StartPipes();
+            _pipeController.StartSpawner();
         }
 
         public void Exit()
         {
-            throw new System.NotImplementedException();
+            _pipeController.StopSpawner();
         }
 
         public void Execute()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

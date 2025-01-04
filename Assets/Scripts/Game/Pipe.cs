@@ -26,5 +26,13 @@ namespace Game
                 transform.Translate(Vector2.left * (Speed * Time.deltaTime));
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("KillLayer"))
+            {
+                DestroySelf();
+            }
+        }
     }
 }

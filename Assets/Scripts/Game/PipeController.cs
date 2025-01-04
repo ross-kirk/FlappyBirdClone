@@ -11,16 +11,19 @@ namespace Game
     {
         [SerializeField] private float pipeSpeed;
         [SerializeField] private float pipeSpawnDelay;
-        [SerializeField] private GameObject pipePrefab;
-
+        [SerializeField] private float spawnHeightLimit = 0.5f;
+        
+        private GameObject pipePrefab;
         private bool shouldSpawn;
-        private List<Pipe> pipes;
+        private bool pipesMoving;
+        private List<Pipe> pipes = new List<Pipe>();
         private Vector3 screenBounds;
 
         private void Start()
         {
-            screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+            screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 10));
             InvokeRepeating("SpawnPipe", 1f, pipeSpawnDelay);
+            pipePrefab = Resources.Load<GameObject>("Prefabs/Pipe");
         }
 
         public void StartSpawner()
@@ -35,17 +38,19 @@ namespace Game
 
         public void StartPipes()
         {
+            pipesMoving = true;
             foreach (var pipe in pipes)
             {
-                pipe.SetSpeed(pipeSpeed);
+                pipe?.SetSpeed(pipeSpeed);
             }
         }
 
         public void StopPipes()
         {
+            pipesMoving = false;
             foreach (var pipe in pipes)
             {
-                pipe.SetSpeed(0);
+                pipe?.SetSpeed(0);
             }
         }
 
@@ -53,7 +58,7 @@ namespace Game
         {
             foreach (var pipe in pipes)
             {
-                pipe.DestroySelf();
+                pipe?.DestroySelf();
             }
         }
 
@@ -73,11 +78,15 @@ namespace Game
                 return;
             }
             
-            var yRandom = Random.Range(0, screenBounds.y);
-            var pipe = Instantiate(pipePrefab, new Vector3(screenBounds.x + 30, yRandom, screenBounds.z),
+            var yRandom = Random.Range(-screenBounds.y + spawnHeightLimit, screenBounds.y - spawnHeightLimit);
+            var pipe = Instantiate(pipePrefab, new Vector3(screenBounds.x + 2, yRandom, screenBounds.z),
                 Quaternion.identity).GetComponent<Pipe>();
             pipe.OnPipeDestroyed += RemovePipe;
             pipes.Add(pipe);
+            if (pipesMoving)
+            {
+                pipe.SetSpeed(pipeSpeed);
+            }
         }
     }
 }

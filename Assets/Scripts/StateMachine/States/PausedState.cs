@@ -12,17 +12,16 @@ namespace Core
         }
         public void Enter()
         {
-            throw new System.NotImplementedException();
+            _pipeController.StopSpawner();
+            _pipeController.StopPipes();
         }
 
         public void Exit()
         {
-            throw new System.NotImplementedException();
         }
 
         public void Execute()
         {
-            throw new System.NotImplementedException();
         }
     }
 }
