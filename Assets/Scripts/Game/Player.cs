@@ -14,7 +14,7 @@ namespace Game
         {
             rb = GetComponent<Rigidbody2D>() ?? gameObject.AddComponent<Rigidbody2D>();
             FreezePlayer();
-            playerInput = GetComponent<PlayerInput>() ?? gameObject.AddComponent<PlayerInput>();
+            playerInput = GetComponent<PlayerInput>();
             jumpAction = playerInput.actions["Jump"];
             jumpAction.performed += _ => HandleJump();
         }
