@@ -4,19 +4,20 @@ namespace Core
 {
     public class PlayState : IState
     {
-        private PipeController _pipeController;
-        //TODO add player ref
+        private readonly PipeController _pipeController;
+        private readonly Player _player;
 
-        public PlayState(PipeController pipeController)
+        public PlayState(PipeController pipeController, Player player)
         {
             _pipeController = pipeController;
-            //todo add player DI
+            _player = player;
         }
         
         public void Enter()
         {
             _pipeController.StartPipes();
             _pipeController.StartSpawner();
+            _player.UnFreezePlayer();
         }
 
         public void Exit()

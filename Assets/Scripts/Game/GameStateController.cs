@@ -8,18 +8,19 @@ namespace Game
     {
         private readonly StateMachine stateMachine = new StateMachine();
         private PipeController pipeController;
-        //TODO add player ref
+        private Player player; 
 
         public static GameStateController Instance { get; private set; }
 
         public void PauseGame()
         {
-            stateMachine.ChangeState(new PausedState(pipeController));
+            stateMachine.ChangeState(new PausedState(pipeController, player));
         }
 
         public void StartGame()
         {
-            stateMachine.ChangeState(new PlayState(pipeController));
+            Setup();
+            stateMachine.ChangeState(new PlayState(pipeController, player));
         }
         
         private void Awake()
@@ -44,7 +45,12 @@ namespace Game
                 pipeController = FindFirstObjectByType<PipeController>() ?? 
                                  new GameObject().AddComponent<PipeController>();
             }
-            //TODO add player setup
+
+            if (player == null)
+            {
+                player = FindFirstObjectByType<Player>() ??
+                         new GameObject().AddComponent<Player>();
+            }
         }
     }
 }
