@@ -47,14 +47,12 @@ namespace Game
         {
             if (pipeController == null)
             {
-                pipeController = FindFirstObjectByType<PipeController>() ?? 
-                                 new GameObject().AddComponent<PipeController>();
+                pipeController = FindFirstObjectByType<PipeController>();
             }
 
             if (player == null)
             {
-                player = FindFirstObjectByType<Player>() ??
-                         new GameObject().AddComponent<Player>();
+                player = FindFirstObjectByType<Player>();
             }
         }
     }

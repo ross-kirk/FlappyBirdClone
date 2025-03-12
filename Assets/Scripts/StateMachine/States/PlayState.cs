@@ -17,7 +17,7 @@ namespace Core
         {
             _pipeController.StartPipes();
             _pipeController.StartSpawner();
-            _player.UnFreezePlayer();
+            _player.UnfreezePlayer();
         }
 
         public void Exit()

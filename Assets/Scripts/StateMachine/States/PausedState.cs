@@ -12,6 +12,7 @@ namespace Core
             _pipeController = pipeController;
             _player = player;
         }
+
         public void Enter()
         {
             _pipeController.StopSpawner();
@@ -21,7 +22,6 @@ namespace Core
 
         public void Exit()
         {
-            _player.UnFreezePlayer();
         }
 
         public void Execute()

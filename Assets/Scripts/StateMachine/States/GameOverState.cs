@@ -4,28 +4,28 @@ namespace Core
 {
     public class GameOverState : IState
     {
-        private Player _player;
-        private PipeController _pipeController;
+        private readonly Player _player;
+        private readonly PipeController _pipeController;
         
         public GameOverState(Player player, PipeController pipeController)
         {
             _player = player;
             _pipeController = pipeController;
         }
-        
+
         public void Enter()
         {
-            throw new System.NotImplementedException();
+            _pipeController.StopSpawner();
+            _pipeController.StopPipes();
+            _player.FreezePlayer();
         }
 
         public void Exit()
         {
-            throw new System.NotImplementedException();
         }
 
         public void Execute()
         {
-            throw new System.NotImplementedException();
         }
     }
 }
