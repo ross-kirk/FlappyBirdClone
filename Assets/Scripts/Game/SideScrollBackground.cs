@@ -57,6 +57,24 @@ namespace Game
                 rightChild.transform.localPosition = new Vector3(backgroundWidth, 0, 0);
                 rightChild.transform.localScale = new Vector3(1, 1, 1);
                 _renderer.CopyComponent(rightChild);
+                
+                if (TryGetComponent<Collider>(out var parentCollider))
+                {
+                    parentCollider.CopyComponent(leftChild);
+                    parentCollider.CopyComponent(rightChild);
+                }
+
+                if (TryGetComponent<Rigidbody2D>(out var parentRb))
+                {
+                    var leftRb = leftChild.AddComponent<Rigidbody2D>();
+                    var rightRb = rightChild.AddComponent<Rigidbody2D>();
+
+                    leftRb.bodyType = parentRb.bodyType; 
+                    leftRb.constraints = parentRb.constraints;
+
+                    rightRb.bodyType = parentRb.bodyType; 
+                    rightRb.constraints = parentRb.constraints;
+                }
             }
         }
     }

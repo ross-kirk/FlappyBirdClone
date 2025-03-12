@@ -28,7 +28,6 @@ namespace Utils
                 if (!property.CanRead || !property.CanWrite) continue;
                 
                 property.SetValue(copy, property.GetValue(original, null), null);
-                
             }
 
             return copy;

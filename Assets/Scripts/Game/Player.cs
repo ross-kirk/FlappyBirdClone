@@ -9,6 +9,7 @@ namespace Game
         private Rigidbody2D rb;
         private PlayerInput playerInput;
         private InputAction jumpAction;
+        private RigidbodyConstraints2D? cachedConstraints;
         
         private void Awake()
         {
@@ -21,12 +22,16 @@ namespace Game
 
         public void FreezePlayer()
         {
+            cachedConstraints = rb.constraints;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
         public void UnFreezePlayer()
         {
-            rb.constraints = RigidbodyConstraints2D.None;
+            if (cachedConstraints.HasValue && cachedConstraints.Value != RigidbodyConstraints2D.FreezeAll)
+            {
+                rb.constraints = cachedConstraints ?? RigidbodyConstraints2D.None;
+            }
         }
 
         private void HandleJump()

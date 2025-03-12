@@ -22,6 +22,11 @@ namespace Game
             Setup();
             stateMachine.ChangeState(new PlayState(pipeController, player));
         }
+
+        public void GameOver()
+        {
+            stateMachine.ChangeState(new GameOverState(player, pipeController));
+        }
         
         private void Awake()
         {
