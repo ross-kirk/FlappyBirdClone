@@ -1,3 +1,5 @@
+using System;
+using Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +15,8 @@ namespace Game
         private PlayerInput playerInput;
         private InputAction jumpAction;
 
+        private Vector2 initialLocation;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>() ?? gameObject.AddComponent<Rigidbody2D>();
@@ -20,6 +24,17 @@ namespace Game
             jumpAction = playerInput.actions["Jump"];
             jumpAction.performed += _ => HandleJump();
             FreezePlayer();
+        }
+
+        private void Start()
+        {
+            initialLocation = transform.position;
+        }
+
+        public void RestartPosition()
+        {
+            transform.rotation = Quaternion.Euler(0,0,0);
+            transform.position = initialLocation;
         }
 
         public void FreezePlayer()
@@ -50,6 +65,34 @@ namespace Game
 
             var targetRotation = Quaternion.Euler(0, 0, downwardAngle);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("KillLayer"))
+            {
+                GameStateController.Instance.GameOver();
+            }
+
+            if (other.CompareTag("Goal"))
+            {
+                GameStateController.Instance.IncrementScore();
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("KillLayer") &&
+                GameStateController.Instance.CurrentState.GetType() == typeof(PlayState))
+            {
+                GameStateController.Instance.GameOver();
+            }
+
+            if (other.gameObject.CompareTag("KillLayer") &&
+                GameStateController.Instance.CurrentState.GetType() == typeof(GameOverState))
+            {
+                FreezePlayer();
+            }
         }
     }
 }

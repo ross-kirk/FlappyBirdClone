@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - KillLayer
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3745799569
+    locked: 0
+  - name: BehindPlayer
+    uniqueID: 1392528445
     locked: 0
   - name: Player
     uniqueID: 447254917

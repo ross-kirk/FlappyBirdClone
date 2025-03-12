@@ -11,6 +11,7 @@ namespace Game
         [SerializeField] private bool reverseDirection = false;
         private float backgroundWidth;
         private SpriteRenderer _renderer;
+        private bool canMove = true;
 
         private Vector3 startPosition;
 
@@ -21,13 +22,18 @@ namespace Game
             BuildBounds();
         }
 
-        void Start()
+        private void Start()
         {
             startPosition = transform.position;
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
+            if (!canMove)
+            {
+                return;
+            }
+            
             var newPosition = Mathf.Repeat(Time.time * scrollSpeed, backgroundWidth);
             transform.position = !reverseDirection
                 ? startPosition + Vector3.left * newPosition
@@ -76,6 +82,16 @@ namespace Game
                     rightRb.constraints = parentRb.constraints;
                 }
             }
+        }
+
+        public void StopMovement()
+        {
+            canMove = false;
+        }
+
+        public void StartMovement()
+        {
+            canMove = true;
         }
     }
 }
