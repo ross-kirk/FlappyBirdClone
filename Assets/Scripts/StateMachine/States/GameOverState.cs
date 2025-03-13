@@ -26,7 +26,6 @@ namespace Core
         public void Exit()
         {
             _gameOverPopup.gameObject.SetActive(false);
-            _pipeController.RemoveAllPipes();
         }
 
         public void Execute()

@@ -33,6 +33,7 @@ namespace Game
         {
             stateMachine.ChangeState(new NewGameState(player, pipeController));
             OnRestartGame?.Invoke();
+            StartGame();
         }
 
         public void PauseGame()

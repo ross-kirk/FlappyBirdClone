@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Core;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -56,9 +57,10 @@ namespace Game
 
         public void RemoveAllPipes()
         {
-            foreach (var pipe in pipes)
+            while (pipes.Count > 0)
             {
-                pipe?.DestroySelf();
+                var pipe = pipes[0];
+                pipe.DestroySelf();
             }
         }
 

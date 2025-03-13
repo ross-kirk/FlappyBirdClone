@@ -17,11 +17,11 @@ namespace Core
         {
             _player.RestartPosition();
             GameStateController.Instance.ResetScore();
+            _pipeController.RemoveAllPipes();
         }
 
         public void Exit()
         {
-            GameStateController.Instance.StartGame();
         }
 
         public void Execute()
