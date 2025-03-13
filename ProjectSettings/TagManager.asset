@@ -6,6 +6,7 @@ TagManager:
   tags:
   - KillLayer
   - Goal
+  - PipeKill
   layers:
   - Default
   - TransparentFX

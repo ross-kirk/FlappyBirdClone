@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa49c330f2534b6dbb48b12d6772dcc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 4
+  jumpForce: 3.5
   rotationSpeed: 0.8
   downwardAngle: -125
   jumpRotationAngle: -40
