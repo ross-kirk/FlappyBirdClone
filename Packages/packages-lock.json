@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "com.corkscrew.remote-debug": {
+      "version": "file:G:/dev/Packages/remote-debug",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "com.corkscrew.websockets": {
+      "version": "file:G:/dev/Packages/websockets",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "10.1.4",
       "depth": 1,
