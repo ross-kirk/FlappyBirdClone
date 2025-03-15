@@ -53,6 +53,11 @@ namespace Game
             if (rb.bodyType == RigidbodyType2D.Kinematic)
                 return;
 
+            if (GameStateController.Instance.CurrentState != GameState.Playing)
+            {
+                return;
+            }
+
             rb.linearVelocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             transform.rotation = Quaternion.Euler(0, 0, -jumpRotationAngle);
@@ -69,12 +74,14 @@ namespace Game
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("KillLayer"))
+            if (other.CompareTag("KillLayer") &&
+                GameStateController.Instance.CurrentState == GameState.Playing)
             {
                 GameStateController.Instance.GameOver();
             }
 
-            if (other.CompareTag("Goal"))
+            if (other.CompareTag("Goal") && 
+                GameStateController.Instance.CurrentState == GameState.Playing)
             {
                 GameStateController.Instance.IncrementScore();
             }
@@ -83,13 +90,13 @@ namespace Game
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("KillLayer") &&
-                GameStateController.Instance.CurrentState.GetType() == typeof(PlayState))
+                GameStateController.Instance.CurrentState == GameState.Playing)
             {
                 GameStateController.Instance.GameOver();
             }
 
             if (other.gameObject.CompareTag("KillLayer") &&
-                GameStateController.Instance.CurrentState.GetType() == typeof(GameOverState))
+                GameStateController.Instance.CurrentState == GameState.GameOver)
             {
                 FreezePlayer();
             }

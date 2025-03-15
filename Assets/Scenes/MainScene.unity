@@ -984,6 +984,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9205799844180538843, guid: adcfa0b6f32805f45932613bf45de455, type: 3}
+      propertyPath: scrollSpeed
+      value: 1.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7219890010109310965, guid: adcfa0b6f32805f45932613bf45de455, type: 3}

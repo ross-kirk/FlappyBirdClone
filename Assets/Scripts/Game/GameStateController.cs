@@ -20,7 +20,14 @@ namespace Game
         private Player player;
         private GameOverPopup gameOverPopup;
 
-        public IState CurrentState => stateMachine.CurrentState;
+        public GameState CurrentState => stateMachine.CurrentState switch
+        {
+            PlayState => GameState.Playing,
+            PausedState => GameState.Paused,
+            GameOverState => GameState.GameOver,
+            NewGameState => GameState.NewGame,
+            _ => GameState.NewGame 
+        };
 
         public static GameStateController Instance { get; private set; }
 
