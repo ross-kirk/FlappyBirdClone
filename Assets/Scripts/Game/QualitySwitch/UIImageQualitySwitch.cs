@@ -44,8 +44,8 @@ namespace Game.QualitySwitch
                     break;
             }
 
-            target.preserveAspect = preserveAspect;
-            target.SetNativeSize();
+            //target.preserveAspect = preserveAspect;
+            //target.SetNativeSize();
         }
 
         private void ResetTarget()
