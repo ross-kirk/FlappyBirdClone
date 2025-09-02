@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3497294411487466279}
   - component: {fileID: 7582395772592744506}
   - component: {fileID: 1640845250934858512}
+  - component: {fileID: 1741225409583591267}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -200,3 +201,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.032106537, y: 0}
   m_Radius: 0.4397395
+--- !u!114 &1741225409583591267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718352304438853127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423ec7fc77684b4dba8602af72b45790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 3706605803545822008}
+  sprites:
+    ProgrammerArt: {fileID: 3866580284384279541, guid: b757d0777f1414605abc67db9866814c, type: 3}
+    ProgrammerArtColorTint: {r: 1, g: 0.8000001, b: 0, a: 1}
+    SlightlyProgrammerArt: {fileID: 21300000, guid: 644e520e3e058f54da826f760a590f25, type: 3}
+    RealArt: {fileID: 3866580284384279541, guid: b757d0777f1414605abc67db9866814c, type: 3}
+    NormalColorTint: {r: 1, g: 1, b: 1, a: 1}

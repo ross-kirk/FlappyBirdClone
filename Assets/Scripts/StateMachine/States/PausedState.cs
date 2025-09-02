@@ -5,9 +5,9 @@ namespace Core
     public class PausedState : IState
     {
         private readonly PipeController _pipeController;
-        private readonly Player _player;
+        private readonly IPlayer _player;
         
-        public PausedState(PipeController pipeController, Player player)
+        public PausedState(PipeController pipeController, IPlayer player)
         {
             _pipeController = pipeController;
             _player = player;

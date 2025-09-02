@@ -17,7 +17,7 @@ namespace Game
         
         private readonly StateMachine stateMachine = new StateMachine();
         private PipeController pipeController;
-        private Player player;
+        private IPlayer player;
         private GameOverPopup gameOverPopup;
 
         public GameState CurrentState => stateMachine.CurrentState switch
@@ -98,8 +98,10 @@ namespace Game
 
             if (player == null)
             {
-                player = FindFirstObjectByType<Player>();
+                var go = GameObject.FindWithTag("Player");
+                if (go != null) player = go.GetComponent<IPlayer>();
             }
+
 
             if (gameOverPopup == null)
             {

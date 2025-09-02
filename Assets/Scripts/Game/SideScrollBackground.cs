@@ -1,4 +1,5 @@
 using System;
+using Game.QualitySwitch;
 using UnityEngine;
 using Utils;
 
@@ -11,6 +12,7 @@ namespace Game
         [SerializeField] private bool reverseDirection = false;
         private float backgroundWidth;
         private SpriteRenderer _renderer;
+        private SpriteRendererQualitySwitch _qualitySwitch;
         private bool canMove = true;
 
         private Vector3 startPosition;
@@ -18,6 +20,7 @@ namespace Game
         private void Awake()
         {
             _renderer = GetComponent<SpriteRenderer>();
+            _qualitySwitch = GetComponent<SpriteRendererQualitySwitch>();
             SetBackgroundWidth();
             BuildBounds();
         }
@@ -57,12 +60,16 @@ namespace Game
                 leftChild.transform.localPosition = new Vector3(-backgroundWidth, 0, 0);
                 leftChild.transform.localScale = new Vector3(1, 1, 1);
                 _renderer.CopyComponent(leftChild);
+                leftChild.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+                _qualitySwitch.CopyComponent(leftChild);
 
                 var rightChild = new GameObject("RightChild");
                 rightChild.transform.SetParent(gameObject.transform);
                 rightChild.transform.localPosition = new Vector3(backgroundWidth, 0, 0);
                 rightChild.transform.localScale = new Vector3(1, 1, 1);
                 _renderer.CopyComponent(rightChild);
+                rightChild.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+                _qualitySwitch.CopyComponent(rightChild);
                 
                 if (TryGetComponent<Collider>(out var parentCollider))
                 {

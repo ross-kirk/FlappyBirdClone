@@ -4,10 +4,10 @@ namespace Core
 {
     public class NewGameState : IState
     {
-        private readonly Player _player;
+        private readonly IPlayer _player;
         private readonly PipeController _pipeController;
 
-        public NewGameState(Player player, PipeController pipeController)
+        public NewGameState(IPlayer player, PipeController pipeController)
         {
             _player = player;
             _pipeController = pipeController;

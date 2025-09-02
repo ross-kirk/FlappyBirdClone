@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace Game
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IPlayer
     {
         [SerializeField] private float jumpForce = 4f;
         [SerializeField] private float rotationSpeed = 0.8f;

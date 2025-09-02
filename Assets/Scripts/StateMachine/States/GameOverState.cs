@@ -4,11 +4,11 @@ namespace Core
 {
     public class GameOverState : IState
     {
-        private readonly Player _player;
+        private readonly IPlayer _player;
         private readonly PipeController _pipeController;
         private readonly GameOverPopup _gameOverPopup;
         
-        public GameOverState(Player player, PipeController pipeController, GameOverPopup gameOverPopup)
+        public GameOverState(IPlayer player, PipeController pipeController, GameOverPopup gameOverPopup)
         {
             _player = player;
             _pipeController = pipeController;
