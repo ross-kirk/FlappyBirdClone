@@ -16,13 +16,13 @@ namespace Utils
         {
             var copy = dest.AddComponent<T>();
 
-            var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
+            var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic);
             foreach (var field in fields)
             {
                 field.SetValue(copy, field.GetValue(original));
             }
             
-            var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
+            var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic);
             foreach (var property in properties)
             {
                 if (!property.CanRead || !property.CanWrite) continue;
