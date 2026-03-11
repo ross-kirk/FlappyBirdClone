@@ -7,10 +7,16 @@ namespace Game
 {
     public class Player : MonoBehaviour, IPlayer
     {
+        [Header("Movement")]
         [SerializeField] private float jumpForce = 4f;
         [SerializeField] private float rotationSpeed = 0.8f;
         [SerializeField] private float downwardAngle = -125f;
         [SerializeField] private float jumpRotationAngle = 30f;
+        
+        [Header("Audio")]
+        [SerializeField] private AudioEvent jumpAudioEvent;
+        [SerializeField] private AudioEvent impactAudioEvent;
+        
         private Rigidbody2D rb;
         private PlayerInput playerInput;
         private InputAction jumpAction;
