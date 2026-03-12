@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8563fcf3eb348a8b7fe5a192923061, type: 3}
+  m_Name: AudioLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::AudioLibrary
+  events:
+  - {fileID: 11400000, guid: fd34519e365384e33a42e6eeb7c32460, type: 2}
+  - {fileID: 11400000, guid: 51f02326b30f54828803badb17643d62, type: 2}
+  - {fileID: 11400000, guid: af78f7159542c4cd6a622cd8c812f0d0, type: 2}
+  tracks:
+  - {fileID: 11400000, guid: 151ba6db7552240e8ba735e840d2204e, type: 2}
+  - {fileID: 11400000, guid: b46beffcec84545958afc001c68fb3d3, type: 2}
+  - {fileID: 11400000, guid: 5f889b02bfd484228a571e51d0ef9fa0, type: 2}
+  buses:
+  - {fileID: 11400000, guid: 0a25b60698dc74a7d93f02f5952227a5, type: 2}
+  - {fileID: 11400000, guid: 9567ea20cc6ed41d3ba3f457eb5d0fa5, type: 2}
+  parameters: []
+  parameterBindings: []

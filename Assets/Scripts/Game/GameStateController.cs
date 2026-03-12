@@ -15,6 +15,9 @@ namespace Game
         public int CurrentScore { get; private set; }
         public int LastScore { get; private set; }
         
+        [SerializeField] private MusicController musicController;
+        [SerializeField] private AudioEvent gameOverAudioEvent;
+        
         private readonly StateMachine stateMachine = new StateMachine();
         private PipeController pipeController;
         private IPlayer player;

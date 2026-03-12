@@ -67,6 +67,7 @@ namespace Game
             rb.linearVelocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             transform.rotation = Quaternion.Euler(0, 0, -jumpRotationAngle);
+            AudioComponent.Instance.Player.PlaySound(jumpAudioEvent);
         }
 
         private void Update()
