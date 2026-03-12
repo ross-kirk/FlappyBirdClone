@@ -96,6 +96,7 @@ namespace Game
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            AudioComponent.Instance.Player.PlaySound(impactAudioEvent);
             if (other.gameObject.CompareTag("KillLayer") &&
                 GameStateController.Instance.CurrentState == GameState.Playing)
             {

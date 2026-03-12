@@ -15,8 +15,8 @@ namespace Game
         public int CurrentScore { get; private set; }
         public int LastScore { get; private set; }
         
-        [SerializeField] private MusicController musicController;
         [SerializeField] private AudioEvent gameOverAudioEvent;
+        [SerializeField] private AudioEvent scoreAudioEvent;
         
         private readonly StateMachine stateMachine = new StateMachine();
         private PipeController pipeController;
@@ -60,13 +60,14 @@ namespace Game
 
         public void GameOver()
         {
-            stateMachine.ChangeState(new GameOverState(player, pipeController, gameOverPopup));
+            stateMachine.ChangeState(new GameOverState(player, pipeController, gameOverPopup, gameOverAudioEvent));
             OnGameOver?.Invoke();
         }
 
         public void IncrementScore()
         {
             CurrentScore += 1;
+            AudioComponent.Instance.Player.PlaySound(scoreAudioEvent);
             OnScoreUpdate?.Invoke(CurrentScore);
         }
 

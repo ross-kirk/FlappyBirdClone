@@ -71,4 +71,6 @@ public class AudioComponent : MonoBehaviour
 
     public void RestoreSnapshot(BusMixer.Snapshot snap, float blend = 0f) =>
         Buses.RestoreSnapshot(snap, blend);
+    
+    public void PlaySound(string eventName) => Player.PlaySound(eventName);
 }

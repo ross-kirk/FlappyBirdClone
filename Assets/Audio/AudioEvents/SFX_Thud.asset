@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8075417364632458681f167dbb0a8675, type: 3}
   m_Name: SFX_Thud
   m_EditorClassIdentifier: Assembly-CSharp::AudioEvent
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: bf5a1c5a41ec2407dab1350d6a934141, type: 3}
   volume: 1
-  pitch: 1
+  pitch: 0.81
   priority: 128
   notes: 
   variants: []

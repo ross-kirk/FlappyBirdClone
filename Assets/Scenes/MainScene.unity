@@ -388,6 +388,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 826450376}
+        m_TargetAssemblyTypeName: AudioComponent, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIConfirm
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &242237123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1342,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 826450376}
+        m_TargetAssemblyTypeName: AudioComponent, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIConfirm
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &618349445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2142,6 +2166,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 826450376}
+        m_TargetAssemblyTypeName: AudioComponent, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIConfirm
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &754122378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,6 +2247,7 @@ GameObject:
   - component: {fileID: 826450378}
   - component: {fileID: 826450377}
   - component: {fileID: 826450376}
+  - component: {fileID: 826450379}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -2259,6 +2296,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &826450379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826450375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fbdad6c0424740b1bf3bab752f7649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.MusicController
+  _menuTrack: {fileID: 11400000, guid: e339835882e934242aba186173e9a8ac, type: 2}
+  _gameTrack:
+  - {fileID: 11400000, guid: 151ba6db7552240e8ba735e840d2204e, type: 2}
+  - {fileID: 11400000, guid: b46beffcec84545958afc001c68fb3d3, type: 2}
+  - {fileID: 11400000, guid: 5f889b02bfd484228a571e51d0ef9fa0, type: 2}
+  - {fileID: 11400000, guid: 97b4ed25e45f1493bb76640c70fcb7f0, type: 2}
+  - {fileID: 11400000, guid: 84694336c4e844af9b4f26146811b458, type: 2}
+  _gameStateController: {fileID: 1964662403}
 --- !u!1 &1082572737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,6 +2838,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 826450376}
+        m_TargetAssemblyTypeName: AudioComponent, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIConfirm
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1182693684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3099,6 +3168,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497294411487466279, guid: f95e989a3f445f84eaad95c2acddf4f8, type: 3}
+      propertyPath: jumpAudioEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 51f02326b30f54828803badb17643d62, type: 2}
+    - target: {fileID: 3497294411487466279, guid: f95e989a3f445f84eaad95c2acddf4f8, type: 3}
+      propertyPath: impactAudioEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c6fbdc3b3ffb4c3fa067bb17eeec158, type: 2}
     - target: {fileID: 5512766291021709239, guid: f95e989a3f445f84eaad95c2acddf4f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.09
@@ -3914,6 +3991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9c42f8c5784f0cb7ae707383c00d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverAudioEvent: {fileID: 11400000, guid: fd34519e365384e33a42e6eeb7c32460, type: 2}
+  scoreAudioEvent: {fileID: 11400000, guid: af78f7159542c4cd6a622cd8c812f0d0, type: 2}
 --- !u!4 &1964662404
 Transform:
   m_ObjectHideFlags: 0

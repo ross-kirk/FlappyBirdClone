@@ -16,10 +16,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fd34519e365384e33a42e6eeb7c32460, type: 2}
   - {fileID: 11400000, guid: 51f02326b30f54828803badb17643d62, type: 2}
   - {fileID: 11400000, guid: af78f7159542c4cd6a622cd8c812f0d0, type: 2}
+  - {fileID: 11400000, guid: 19572615218284ec1b2d9ad0e659d246, type: 2}
   tracks:
   - {fileID: 11400000, guid: 151ba6db7552240e8ba735e840d2204e, type: 2}
   - {fileID: 11400000, guid: b46beffcec84545958afc001c68fb3d3, type: 2}
   - {fileID: 11400000, guid: 5f889b02bfd484228a571e51d0ef9fa0, type: 2}
+  - {fileID: 11400000, guid: 97b4ed25e45f1493bb76640c70fcb7f0, type: 2}
+  - {fileID: 11400000, guid: 84694336c4e844af9b4f26146811b458, type: 2}
   buses:
   - {fileID: 11400000, guid: 0a25b60698dc74a7d93f02f5952227a5, type: 2}
   - {fileID: 11400000, guid: 9567ea20cc6ed41d3ba3f457eb5d0fa5, type: 2}

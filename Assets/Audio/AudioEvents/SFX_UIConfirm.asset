@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8075417364632458681f167dbb0a8675, type: 3}
   m_Name: SFX_UIConfirm
   m_EditorClassIdentifier: Assembly-CSharp::AudioEvent
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 534a8bd0cc0db46c5bb6338c3c227972, type: 3}
   volume: 1
   pitch: 1
   priority: 128
